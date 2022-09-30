@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Student Management System</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+                            integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+                            crossorigin="anonymous">
+    </head>
+    <body>
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+                    <h1 class="text-center">Create New Student</h1>
+                    <div class="card-body">
+                        <form th:action="@{/students}" th:object="${student}" method="post">
+                        <div class="form-group">
+                            <label>Student First Name</label>
+                            <input type="text" name="first" th:field="*{firstName}" class="form-control" placeholder="First Name">
+                            <label>Student Last Name</label>
+                            <input type="text" name="last" th:field="*{lastName}" class="form-control" placeholder="Last Name">
+                            <label>Email</label>
+                            <input type="text" name="email" th:field="*{email}" class="form-control" placeholder="email">
+                            <div class="box-footer">
+                                <button type="submit" class="btn btn-primary">
+                                    Submit
+                                </button>
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

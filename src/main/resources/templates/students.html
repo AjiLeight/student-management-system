@@ -9,9 +9,15 @@
                             crossorigin="anonymous">
     </head>
     <body>
+        
         <div class="container">
             <div class="row">
                 <h1>List Students</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3">
+                    <a th:href="@{/students/new}" class="btn btn-primary btn-sm mb-3">Add Student</a>
+                </div>
             </div>
             <table class="table table-condensed">
                 <thead class="table-dark">
@@ -27,7 +33,13 @@
                     <tr th:each = "students : ${students}">
                         <td th:text = "${students.firstName}"></td>
                         <td th:text = "${students.lastName}"></td>
-                        <td th:text = "${students.email}"></td>                        
+                        <td th:text = "${students.email}"></td>  
+                        <td>
+                            <a th:href="@{/students/edit/{id}(id=${students.id})}" class="btn btn-primary">Update</a>
+                        </td> 
+                        <td>
+                            <a th:href="@{/students/{id}(id=${students.id})}" class="btn btn-danger">Delete</a>
+                        </td>                      
                     </tr>
                 </tbody>
             </table>
